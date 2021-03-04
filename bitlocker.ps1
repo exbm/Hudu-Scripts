@@ -1,4 +1,9 @@
-﻿function Load-Module ($m) {
+#####################################################################
+$TOKEN = "##########"
+$URL = "https://yourhududomain.com/"
+#####################################################################
+
+ function Load-Module ($m) {
 
     # If module is imported say that and do nothing
     if (Get-Module | Where-Object {$_.Name -eq $m}) {
@@ -28,11 +33,6 @@
 }
 
 Load-Module "HuduAPI"
-
-#####################################################################
-$TOKEN = "##########"
-$URL = "https://yourhududomain.com/"
-#####################################################################
 
 New-HuduAPIKey -ApiKey $TOKEN
 New-HuduBaseURL -BaseURL $URL
